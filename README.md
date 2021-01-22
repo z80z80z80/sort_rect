@@ -29,6 +29,8 @@ print(sort_rect.structured_cells(bboxes))
 ```
 
 ```
-[{'col': 0, 'row': 0, 'bbox': [0, 0, 1, 1]}, {'col': 0, 'row': 1, 'bbox': [0, 2, 1, 3]}, {'col': 0, 'row': 1, 'bbox': [2, 2, 3, 3]}]
+[{'col': 0, 'row': 0, 'bbox': [0, 0, 1, 1]}, 
+{'col': 0, 'row': 1, 'bbox': [0, 2, 1, 3]}, 
+{'col': 0, 'row': 1, 'bbox': [2, 2, 3, 3]}]
 ```
 
