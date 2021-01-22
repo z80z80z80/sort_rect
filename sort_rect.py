@@ -87,7 +87,11 @@ def unique_col_coords(rows_sorted):
 
 def get_col(unique_cols, cell):
     if len(np.array(unique_cols).shape) == 1:
-        unique_cols = [unique_cols]
+        new_unique_cols = []
+        for col in unique_cols:
+            new_unique_cols.append([col])
+        unique_cols = new_unique_cols
+
     for i in range(len(unique_cols)):
         for coord in unique_cols[i]:
             if coord == cell[0]:
