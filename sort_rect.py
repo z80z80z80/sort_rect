@@ -86,13 +86,14 @@ def unique_col_coords(rows_sorted):
     return np.unique(unique)
 
 def get_col(unique_cols, cell):
-    if len(np.array(unique_cols).shape) == 1:
-        new_unique_cols = []
-        for col in unique_cols:
-            new_unique_cols.append([col])
-        unique_cols = new_unique_cols
-
     for i in range(len(unique_cols)):
+        try: 
+            iter(unique_cols[i])
+        except:
+            unique_cols = unique_cols.tolist()
+            unique_cols[i] = [unique_cols[i]]
+            unique_cols = np.array(unique_cols)
+            
         for coord in unique_cols[i]:
             if coord == cell[0]:
                 return i
@@ -121,4 +122,4 @@ def structured_cells(bboxes):
         return cells
 
     except:
-        raise Exception('You need to supply a list with at least 2 bounding boxes in the style [x0,y0,x1,y1]')
+        raise Exception('Might be something unrelated BUT: You need to supply a list with at least 2 bounding boxes in the style [x0,y0,x1,y1]')
