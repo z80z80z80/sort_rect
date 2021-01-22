@@ -3,7 +3,7 @@ Python library to sort rectangles (or bounding boxes) and place them in a grid, 
 
 ## Use cases
 - you have some objects with 2D coordinates and want to put them into some sort of table
-- example: you know the position of each individual cell of a cell in the image of a table but not it's corresponding row/column numbers
+- example: you know the position of each individual cell of a table in the image of a table but not it's corresponding row/column numbers
 
 ## The catch
 - this was built with tables in mind, so far it only works if there is at least one fully filled row
@@ -17,6 +17,8 @@ Python library to sort rectangles (or bounding boxes) and place them in a grid, 
 ```python
 import sort_rect
 
+# bounding boxes of rectangles are defined with the coordinates of the top left (0) and bottom right corner (1): [x0, y0, x1, y1]
+# example of 3 rectangles
 bboxes = [
         [0,0,1,1],
         [0,2,1,3],
